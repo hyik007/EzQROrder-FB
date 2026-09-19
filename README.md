@@ -1,83 +1,58 @@
-# AI-POS: Zero-Config F&B Point of Sale & KDS 🚀
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-![AI-POS Hero Preview](https://placehold.co/800x400/2563eb/white?text=AI-POS+Preview+-+Replace+with+Your+Screenshot)
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-**AI-POS** is a lightweight, zero-configuration Point of Sale (POS) and Kitchen Display System (KDS) built specifically for local F&B businesses. Fully containerized with Docker and powered by Laravel 13, it eliminates complex server setups by using SQLite and a 1-click UI setup wizard. It also features integrated Google Gemini AI capabilities to handle smart localized interactions.
+## About Laravel
 
----
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## 📸 Screenshots
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-| Customer QR Menu | Kitchen Display Screen (KDS) |
-|:---:|:---:|
-| ![QR Menu](https://placehold.co/300x500/f3f4f6/1f2937?text=Mobile+QR+Menu) | ![KDS](https://placehold.co/500x500/111827/ffffff?text=Kitchen+Display+Screen) |
-| *Mobile-first frictionless ordering* | *Live, auto-refreshing kitchen tickets* |
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
----
+## Learning Laravel
 
-## ✨ Key Features
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-* **Zero-Config Setup Wizard:** No need to mess with `.env` files or external databases. A built-in setup UI (`/setup`) allows restaurant owners to configure their store name and Google Gemini API key, storing it securely in a local SQLite database.
-* **Scan & Order QR Menu (`/t/{table}`):** A mobile-first, frictionless ordering interface built with Alpine.js and Tailwind CSS. Customers can scan a table QR code, browse the menu, add items to a dynamic floating cart, and submit orders directly to the kitchen with special notes.
-* **Live Kitchen Display Screen (`/kds`):** An auto-refreshing, color-coded dashboard for kitchen staff to manage active tickets. Orders flow in real-time, allowing staff to update statuses from *Pending* (Red) ➔ *Preparing* (Yellow) ➔ *Ready* (Green).
-* **Google Gemini AI Integration:** Includes a built-in `GeminiService` connected to the Gemini 1.5 Flash model. Ready to handle smart F&B tasks like translating customer notes, generating localized greetings (e.g., Manglish), or suggesting menu pairings.
-* **Frictionless Deployment:** 100% Dockerized with a self-healing `docker-compose` setup that automatically installs dependencies and boots the server. Download, run `docker compose up`, and the system is live.
+In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
----
+You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
 
-## 🛠️ Tech Stack
+## Agentic Development
 
-* **Backend:** Laravel 13, PHP 8.2
-* **Database:** SQLite (Zero external DB dependencies)
-* **Frontend:** Tailwind CSS, Alpine.js, Blade Templates
-* **Infrastructure:** Docker, Docker Compose
-* **AI Engine:** Google Gemini 1.5 Flash API
+Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
 
----
+```bash
+composer require laravel/boost --dev
 
-## 🚀 Quick Start / Installation
+php artisan boost:install
+```
 
-Because this project is completely Dockerized and uses SQLite, installation takes less than 2 minutes. 
+Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
-**Prerequisites:** You must have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+## Contributing
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/yourusername/ai-pos.git](https://github.com/yourusername/ai-pos.git)
-   cd ai-pos
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-   Boot the Docker Container:
+## Code of Conduct
 
-Bash
-docker compose up -d --build
-Run Database Migrations (Wait 5-10 seconds for container to start first):
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-Bash
-docker compose exec app php artisan migrate
-Seed the Sample Menu (Optional):
+## Security Vulnerabilities
 
-Bash
-docker compose exec app php artisan seed-menu
-🗺️ System Routes
-Once running, access the system via your browser at http://localhost:8000:
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-Setup Wizard: http://localhost:8000/setup (Start here!)
+## License
 
-Customer Menu (Table 1): http://localhost:8000/t/1
-
-Kitchen Display Screen: http://localhost:8000/kds
-
-AI Test Route: http://localhost:8000/ai-test
-
-🎯 Use Case
-Designed for local cafes, hawker stalls, and food trucks that need a digital ordering system today without paying monthly SaaS subscriptions or hiring an IT guy to configure MySQL and web servers.
-
-
-### How to add your REAL pictures later:
-When you push this to GitHub, do this to replace my placeholders with your actual screens:
-1. Open your running app and use `Windows Key + Shift + S` to take 3 screenshots:
-   * The Setup Wizard page.
-   * The mobile Menu view (make your browser window narrow like a phone).
-   * The dark KDS dashboard.
-2. Inside your `ai-pos` folder, create a new folder named `docs` and save your images there (e.g., `docs/menu.png`, `docs/kds.png`).
-3. Change the links in the `README.md` from `[https://placehold.co/](https://placehold.
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
