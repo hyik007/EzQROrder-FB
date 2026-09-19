@@ -45,3 +45,39 @@ Because this project is completely Dockerized and uses SQLite, installation take
    ```bash
    git clone [https://github.com/yourusername/ai-pos.git](https://github.com/yourusername/ai-pos.git)
    cd ai-pos
+
+   Boot the Docker Container:
+
+Bash
+docker compose up -d --build
+Run Database Migrations (Wait 5-10 seconds for container to start first):
+
+Bash
+docker compose exec app php artisan migrate
+Seed the Sample Menu (Optional):
+
+Bash
+docker compose exec app php artisan seed-menu
+🗺️ System Routes
+Once running, access the system via your browser at http://localhost:8000:
+
+Setup Wizard: http://localhost:8000/setup (Start here!)
+
+Customer Menu (Table 1): http://localhost:8000/t/1
+
+Kitchen Display Screen: http://localhost:8000/kds
+
+AI Test Route: http://localhost:8000/ai-test
+
+🎯 Use Case
+Designed for local cafes, hawker stalls, and food trucks that need a digital ordering system today without paying monthly SaaS subscriptions or hiring an IT guy to configure MySQL and web servers.
+
+
+### How to add your REAL pictures later:
+When you push this to GitHub, do this to replace my placeholders with your actual screens:
+1. Open your running app and use `Windows Key + Shift + S` to take 3 screenshots:
+   * The Setup Wizard page.
+   * The mobile Menu view (make your browser window narrow like a phone).
+   * The dark KDS dashboard.
+2. Inside your `ai-pos` folder, create a new folder named `docs` and save your images there (e.g., `docs/menu.png`, `docs/kds.png`).
+3. Change the links in the `README.md` from `[https://placehold.co/](https://placehold.
